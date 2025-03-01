@@ -1,0 +1,19 @@
+import java.util.Deque;
+public class findDeque {
+    public static int findInDeque(Deque<Integer> a, int b) {
+        int n = a.size();
+        int leftIndex = 0;
+        int rightIndex = n - 1;
+
+        for (Integer element : a) {
+            if (element == b) {
+                return Math.min(leftIndex + 1, n - rightIndex);
+            }
+            leftIndex++;
+            rightIndex--;
+        }
+
+        return -1;
+    }
+
+}
